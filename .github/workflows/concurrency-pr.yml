@@ -1,0 +1,33 @@
+name: Concurrent PR
+
+on:
+  pull_request:
+    branches: [ main ]
+
+concurrency:
+# group: tests-on-pr-${{ github.head_ref }}
+group: build-and-test
+# cancel-in-progress: true
+
+jobs:
+# This workflow contains a single job called "Build"
+  build-and-test-on-pr:
+    name: Build and Test On pull request
+    runs-on: ubuntu-latest
+
+    steps:
+      #- name: Output HeadRef
+      #  run: echo "${{ github.head_ref }}"
+
+      - name: Build The Code
+        run: |
+          echo "Starting Code Build"
+          sleep 2m
+          echo "Finish Code Build"
+
+      # Long Running Tests
+      - name: Test the Code
+        run: |
+          echo "Starting Code Build"
+          sleep 2m
+          echo "Finish Code Build"
