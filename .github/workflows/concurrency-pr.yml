@@ -6,7 +6,7 @@ on:
 
 concurrency:
 # group: tests-on-pr-${{ github.head_ref }}
-group: build-and-test
+  group: build-and-test
 # cancel-in-progress: true
 
 jobs:
