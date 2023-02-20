@@ -18,6 +18,11 @@ jobs:
     steps:
       #- name: Output HeadRef
       #  run: echo "${{ github.head_ref }}"
+      
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
 
       - name: Build The Code
         run: |
