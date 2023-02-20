@@ -13,7 +13,7 @@ jobs:
 # This workflow contains a single job called "Build"
   build-and-test-on-pr:
     name: Build and Test On pull request
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       #- name: Output HeadRef
